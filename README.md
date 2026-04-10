@@ -1,73 +1,116 @@
-# React + TypeScript + Vite
+# ✝️ Missionary Journeys — رحلات بولس التبشيرية
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive mobile web app that presents the three missionary journeys of the Apostle Paul in a visual and engaging way — designed for Sunday school teachers and students in churches.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📖 About the Project
 
-## React Compiler
+**Missionary Journeys** is a mobile-first educational web application built to help church servants explain the three missionary journeys of the Apostle Paul to children and youth in a simple and interactive way.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Users can explore an illustrated map with pins placed on each city visited by Paul. Tapping a pin reveals:
+- The city's name
+- Its order in the journey
+- A descriptive text
+- A Bible verse reference
 
-## Expanding the ESLint configuration
+The app covers **3 journeys** with a total of **41 cities**:
+| Journey | Cities |
+|---|---|
+| First Missionary Journey | 10 cities |
+| Second Missionary Journey | 14 cities |
+| Third Missionary Journey | 17 cities |
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+> 🌍 The app is currently available in **Arabic only**.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🎯 Target Audience
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Church servants teaching beginner and middle Sunday school classes
+- Children and youth who want to study Paul's journeys interactively
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| React | UI framework |
+| TypeScript | Type-safe development |
+| Vite | Build tool & dev server |
+| Tailwind CSS | Styling |
+| React Router | Client-side navigation |
+
+---
+
+## 📱 Platform
+
+This project is currently **mobile-only**. The desktop version is not yet available.
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js (v18 or higher recommended)
+- npm or yarn
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/missionary-journeys.git
+
+# Navigate into the project directory
+cd missionary-journeys
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Then open your browser and go to `http://localhost:5173`
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Build for Production
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
 ```
+
+---
+
+## ✨ Features
+
+- 🗺️ Illustrated map with interactive city pins
+- 📍 41 cities across 3 missionary journeys
+- 📖 Each city includes: name, order, description, and a Bible verse
+- 🎞️ Smooth animations for an engaging experience
+- 📱 Optimized for mobile devices
+- 🌐 Full Arabic language support
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! If you'd like to improve this project:
+
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature/your-feature`)
+3. Commit your changes (`git commit -m 'Add some feature'`)
+4. Push to the branch (`git push origin feature/your-feature`)
+5. Open a Pull Request
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 🙏 Acknowledgements
+
+Built with love for the church community, to make Bible education more accessible and interactive for the next generation. ✝️
