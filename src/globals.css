@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+:root {
+  --white: #ffffff;
+  --black: #1a1a1a;
+  --paragraph: #d9d9d9;
+  --line: #2d2d2d;
+  --primary: #00c080;
+  --city-radius: 2rem;
+  --city-sign-color-font: #fff;
+  --city-pin-size-font: 1.2rem;
+  --hover-shadows: 16px 16px 33px #121212, -16px -16px 33px #303030;
+}
+
+.map-city {
+  border-radius: var(--city-radius);
+  position: absolute;
+  top: calc(var(--y) * 1% - var(--city-radius));
+  left: calc(var(--x) * 1% - var(--city-radius));
+  padding: var(--city-radius);
+}
+
+.map-city::after,
+.map-city::before {
+  font-size: var(--city-pin-size-font);
+}
+
+.map-city::before {
+  content: "•";
+  left: calc(-50% + var(--city-radius));
+  position: absolute;
+  top: calc(-0.65em + var(--city-radius));
+  text-align: center;
+  text-shadow: 0 1px 1px #000;
+  width: 100%;
+}
+
+.map-city::after {
+  clip-path: inset(-0.5em 0 0 0);
+  content: "📍";
+  left: calc(-50% + var(--city-radius));
+  position: absolute;
+  top: calc(-1em + var(--city-radius));
+  text-align: center;
+  transition: all 300ms ease-out;
+  width: 100%;
+  z-index: var(--y);
+}
+
+.map-city:hover::after {
+  clip-path: inset(-0.5em 8px 0.5em 0);
+  transform: translateY(0.5em);
+}
+
+.map-city:hover .map-city__label {
+  animation: fadein 300ms forwards ease-out;
+  display: block;
+}
+
+.map-city__label {
+  display: none;
+  position: absolute;
+  text-align: center;
+  width: 30em;
+  z-index: 999;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+    top: calc(var(--city-radius));
+  }
+
+  100% {
+    opacity: 1;
+    top: calc(var(--city-radius) + var(--city-pin-size-font) / 2);
+    transform: translateX(0%) translateY(-115%);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-90deg);
+  }
+}
